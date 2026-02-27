@@ -1,6 +1,7 @@
 /*
-description: Write a version of itoa that accepts three arguments instead of two. The third argument is a minimum field width; the converted number must be padded with blanks on the left if necessary to make it wide enough.
-Author: Ved vyas
+description:Write a version of itoa that accepts three arguments instead of two. The third argument is a minimum
+            field width; the converted number must be padded with blanks on the left if necessary to make it wide enough.
+Author: Dilon Brahmbhatt
 Created: 26 february, 2026
 Modified: 26 february, 2026
 */

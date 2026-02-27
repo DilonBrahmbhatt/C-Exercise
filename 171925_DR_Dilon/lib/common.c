@@ -27,14 +27,17 @@ void switch_choose_program() {
         scanf("%hhu", &choice);
 
         switch(choice) {
-          case 1:
-                DR_M1_switch();
-                break;
- 	  case 2:
+	case 1:
+		DR_M1_switch();
+		break;
+	case 2:
 		DR_M2_switch();
                 break;
-	  case 3:
+	case 3:
 		DR_M3_switch();
+		break;
+	 case 4:
+		DR_M4_switch();
 		break;
 	  default:
                printf("enter valid input");

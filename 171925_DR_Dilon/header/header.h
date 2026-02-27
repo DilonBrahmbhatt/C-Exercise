@@ -14,7 +14,7 @@ void switch_choose_program();
 void DR_M1_switch();
 void DR_M2_switch();
 void DR_M3_switch();
-
+void DR_M4_switch();
 /*common function*/
 void reverse_string();
 
@@ -60,6 +60,9 @@ void expand_main();
 void input_and_convert();
 void Digit_and_Base();
 void Min_field_width();
+
+/*all module4 function definarion*/
+void 
 
 #endif /* HEADER_H */
 
