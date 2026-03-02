@@ -62,7 +62,7 @@ void Digit_and_Base();
 void Min_field_width();
 
 /*all module4 function definarion*/
-void 
+void strindex_main();
 
 #endif /* HEADER_H */
 
