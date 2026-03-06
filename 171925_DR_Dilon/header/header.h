@@ -2,10 +2,18 @@
 this will contain defination of all the function.
 Author: Dilon Brahmbhatt
 Created: 06 february, 2026
-Modified: 11 february, 2026
+Modified: 06 march, 2026
 */
+
 #ifndef HEADER_H
 #define HEADER_H
+
+/* stack related function declaration */
+#define MAX_TOKEN_LEN 100
+#define NUMBER_TOKEN '0'
+#define NAME 'n'
+#define INPUT_BUFFER_SIZE 100
+#define STACK_SIZE 100
 
 /*main switch function for getting module*/
 void switch_choose_program();
@@ -15,8 +23,16 @@ void DR_M1_switch();
 void DR_M2_switch();
 void DR_M3_switch();
 void DR_M4_switch();
+
 /*common function*/
-void reverse_string();
+void reverse_string(char str[]);
+void push_to_stack(double value);
+double pop_from_stack();
+int16_t get_character();
+void pushback_character(int16_t ch);
+int16_t get_token(char token[]);
+void clearsp();
+void print_stack();
 
 /*all module1 function definarion*/
 void hellow_world();
@@ -63,6 +79,11 @@ void Min_field_width();
 
 /*all module4 function definarion*/
 void strindex_main();
+void atof_main();
+void reverse_polish_calculator();
+void swap_duplicate_top();
+void add_sin_exp_pow();
+void handling_variables_RPN();
 
 #endif /* HEADER_H */
 

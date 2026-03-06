@@ -36,7 +36,7 @@ all: $(TARGET)
 # It no longer tries to compile .c files in this step.
 $(TARGET): $(ALL_OBJS)
 	@mkdir -p $(BIN_DIR)
-	$(CC) $(ALL_OBJS) -o $(TARGET)
+	$(CC) $(ALL_OBJS) -o $(TARGET) -lm
 
 # Rule for Core Files
 $(CORE_OBJ_DIR)/%.o: src/%.c
