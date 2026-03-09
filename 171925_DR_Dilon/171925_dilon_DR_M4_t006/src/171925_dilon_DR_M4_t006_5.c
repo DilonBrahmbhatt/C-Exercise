@@ -113,7 +113,7 @@ void add_sin_exp_pow()
         /* PRINT TOP */
         case '?':
             operand2 = pop_from_stack();
-            printf("\t%.8g\n", operand2);
+            printf("%.8g\n", operand2);
             push_to_stack(operand2);
             break;
 

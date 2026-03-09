@@ -79,7 +79,7 @@ while (1)
             break;
 
          case '\n':
-                printf("\t%.8g\n", pop_from_stack());
+                printf("%.8g\n", pop_from_stack());
                 break;
 
          default:

@@ -80,7 +80,7 @@ void swap_duplicate_top()
         case '?':
 
             operand2 = pop_from_stack();
-            printf("\t%.8g\n", operand2);
+            printf("%.8g\n", operand2);
             push_to_stack(operand2);
             break;
 
@@ -96,7 +96,6 @@ void swap_duplicate_top()
 
             printf("Stack before duplication: ");
             print_stack();
-
             operand2 = pop_from_stack();
             push_to_stack(operand2);
             push_to_stack(operand2);
@@ -125,7 +124,7 @@ void swap_duplicate_top()
 
         case '\n':
 
-            printf("\t%.8g\n", pop_from_stack());
+            printf("%.8g\n", pop_from_stack());
             break;
 
         default:

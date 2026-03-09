@@ -36,7 +36,31 @@ void DR_M4_switch() {
                 add_sin_exp_pow();
                 break;
         case 6:
-               handling_variables_RPN();
+		handling_variables_RPN();
+                break;
+        case 7:
+		ungets_main();
+                break;
+        case 8:
+                updated_getch_ungetch();
+                break;
+        case 9:
+                EOF_handling();
+                break;
+        case 10:
+                RPN_using_getline_function();
+                break;
+        case 11:
+                RPN_using_static_var_function();
+                break;
+        case 12:
+                itoa_using_recursion();
+                break;
+        case 13:
+                swap_duplicate_top();
+		break;
+        case 14:
+                macro_swap();
                 break;
 	default:
 		break;

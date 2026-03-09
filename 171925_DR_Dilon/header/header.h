@@ -7,6 +7,7 @@ Modified: 06 march, 2026
 
 #ifndef HEADER_H
 #define HEADER_H
+#include <stdint.h>
 
 /* stack related function declaration */
 #define MAX_TOKEN_LEN 100
@@ -14,6 +15,7 @@ Modified: 06 march, 2026
 #define NAME 'n'
 #define INPUT_BUFFER_SIZE 100
 #define STACK_SIZE 100
+#define MAXLINE 1000
 
 /*main switch function for getting module*/
 void switch_choose_program();
@@ -33,6 +35,11 @@ void pushback_character(int16_t ch);
 int16_t get_token(char token[]);
 void clearsp();
 void print_stack();
+int16_t mgetline(char s[], int16_t lim);
+void ungets(char s[]);
+int16_t getch();
+void ungetch(int16_t c);
+int16_t getop(char token[]);
 
 /*all module1 function definarion*/
 void hellow_world();
@@ -84,6 +91,14 @@ void reverse_polish_calculator();
 void swap_duplicate_top();
 void add_sin_exp_pow();
 void handling_variables_RPN();
+void ungets_main();
+void updated_getch_ungetch();
+void EOF_handling();
+void RPN_using_getline_function();
+void RPN_using_static_var_function();
+void itoa_using_recursion();
+void swap_duplicate_top();
+void macro_swap();
 
 #endif /* HEADER_H */
 
