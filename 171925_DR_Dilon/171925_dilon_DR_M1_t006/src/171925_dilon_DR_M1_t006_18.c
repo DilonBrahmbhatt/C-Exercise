@@ -8,7 +8,7 @@ Modified: 13 february, 2026
 #include <stdio.h>
 #include <stdint.h>
 #define MAX 100   // total character storage
- 
+
 void remove_trailing_blanks_tabs()
 {
     int16_t ch;

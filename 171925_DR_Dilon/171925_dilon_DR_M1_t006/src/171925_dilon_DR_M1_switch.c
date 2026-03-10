@@ -72,6 +72,9 @@ void DR_M1_switch() {
           case 18:
                 remove_trailing_blanks_tabs();
                 break;
+          case 19:
+                reverse_line();
+                break;
           case 20:
                 detab_input_stream();
                 break;

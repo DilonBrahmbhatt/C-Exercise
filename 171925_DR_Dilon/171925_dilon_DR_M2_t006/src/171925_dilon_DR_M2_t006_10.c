@@ -8,9 +8,7 @@ Modified: 24 february, 2026
 */
 
 #include <stdio.h>
-
 #include <stdint.h>
-
 char lower(char Ichar)
 
 {
@@ -22,7 +20,6 @@ char lower(char Ichar)
 void Uper_to_Lower()
 
 {
-
   int16_t ch;
  
 printf("\nEnter the String: ");

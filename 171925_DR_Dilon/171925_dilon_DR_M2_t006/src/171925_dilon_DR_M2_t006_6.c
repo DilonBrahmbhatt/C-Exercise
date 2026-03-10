@@ -3,7 +3,6 @@ description:Write a function setbits(x,p,n,y) that returns x with the n bits tha
 Author: Dilon Brhmbhatt
 Created: 23 february, 2026
 Modified: 23 february, 2026
-version: 2
 */
 #include <stdio.h>
 #include <stdint.h>

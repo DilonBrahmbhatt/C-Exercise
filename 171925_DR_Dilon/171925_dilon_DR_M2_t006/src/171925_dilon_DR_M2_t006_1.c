@@ -1,3 +1,10 @@
+/*
+description:Write a program to determine the ranges of char, short, int, and long variables, both signed and unsigned,
+            by printing appropriate values from standard headers and by direct computation.
+Author: Dilon Brahmbhatt
+Created: 20 february, 2026
+Modified: 20 february, 2026
+*/
 #include <stdio.h>
 #include <limits.h>
 #include <float.h>
