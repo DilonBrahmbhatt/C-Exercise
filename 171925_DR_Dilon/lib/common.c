@@ -37,7 +37,7 @@ void switch_choose_program() {
 	case 3:
 		DR_M3_switch();
 		break;
-	 case 4:
+	case 4:
 		DR_M4_switch();
 		break;
 	  default:

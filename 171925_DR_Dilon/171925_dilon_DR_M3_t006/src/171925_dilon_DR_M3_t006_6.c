@@ -43,7 +43,7 @@ void Min_field_width()
 {
     char outputString[MAX_LEN];
     int32_t inputNumber;
-        int32_t width;
+    int32_t width;
     printf("Digit: ");
     scanf("%d", &inputNumber);
 printf("Min Field width: ");

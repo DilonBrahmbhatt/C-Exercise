@@ -1,3 +1,9 @@
+/*
+description: Write a function reverse(s) that reverses the character string s. Use it to write a program that reverses its input a line at a time.
+Author: Dilon Brhmbhatt
+Created: 13 february, 2026
+Modified: 13 february, 2026
+*/
 
 #include <stdio.h>
 #include <stdint.h>
@@ -26,13 +32,13 @@ void reverse_line()
             line_start = c_index;
         }
     }
- 
+
     if (c_index > line_start)
     {
         index_arr[i_index++] = line_start;
         index_arr[i_index++] = c_index;
     }
- 
+
     /* Reverse each line */
     for (int i = 0; i < i_index; i += 2)
     {

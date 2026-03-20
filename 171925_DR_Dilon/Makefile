@@ -68,3 +68,4 @@ $(M4_DIR)/obj/%.o: $(M4_DIR)/src/%.c
 clean:
 	rm -rf $(BIN_DIR)/*.out $(CORE_OBJ_DIR)/*.o
 	rm -rf $(M1_DIR)/obj/*.o $(M2_DIR)/obj/*.o $(M3_DIR)/obj/*.o $(M4_DIR)/obj/*.o
+

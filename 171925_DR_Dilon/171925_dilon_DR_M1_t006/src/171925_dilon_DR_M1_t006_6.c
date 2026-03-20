@@ -13,7 +13,6 @@ uint8_t result;
     result = (getchar() != EOF);
 
     printf("%d\n", result);
-
 }
 
 
