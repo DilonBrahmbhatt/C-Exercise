@@ -19,7 +19,7 @@ void C3_YPK_switch()
         printf("\n- YPK chapter 3 function list -\n");
         printf("Enter choice: ");
         c=false;
-        scanf("%hu", &choice); //understand %hhu
+        scanf("%hu", &choice);
         switch(choice) {
                 case 1: find_first_occurence();
                         break;
@@ -29,6 +29,8 @@ void C3_YPK_switch()
                         break;
                 case 4: compressed_decompressed();
                         break;
+		case 5: encode_decode();
+			break;
                 case 0: exit(0);
                 default: printf("Invalid selection.\n");
 }

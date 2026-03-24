@@ -21,7 +21,7 @@ Modified: 18 march, 2026
 #include "../inc/c3_YPK.h"
 #define MAX 100
 
-char *xstrstr(char *string1, char *string2)
+char *xstr(char *string1, char *string2)
 {
     char *s1;
     char *s2;
@@ -53,17 +53,12 @@ void find_substring()
     char str1[MAX];
     char str2[MAX];
     char *result;
-
-    clear_input_buffer();   // optional but fine
-
+    clear_input_buffer();
     printf("Enter a string: ");
     mgetline(str1, MAX);
-
     printf("Enter substring to search: ");
-    mgetline(str2, MAX);   // ✅ FIXED (was str1)
-
-    result = xstrstr(str1, str2);   // ✅ FIXED (was xstrchr)
-
+    mgetline(str2, MAX);
+    result = xstr(str1, str2);
     if (result != NULL)
         printf("Substring found at position: %ld\n", result - str1);
     else

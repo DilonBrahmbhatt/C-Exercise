@@ -14,6 +14,6 @@ void clear_input_buffer();
 void switch_choose_module();
 int16_t mgetline(char s[], int16_t lim);
 void find_substring();
-
+void encode_decode();
 /* All module-2 task prototypes */
 #endif
