@@ -57,7 +57,7 @@ static int16_t bufferPosition = 0;
 
 /*
 description: this function is used for reversing the string.
-Author: Ved vyas
+Author: Dilon Brahmbhatt
 Created: 27 february, 2026
 Modified: 27 february, 2026
 */
@@ -79,7 +79,7 @@ void reverse_string(char str[])
 
 /*
 description: this is the push function of the stack.
-Author: Ved vyas
+Author: Dilon Brahmbhatt
 Created: 05 march, 2026
 Modified: 05 march, 2026
 */
@@ -94,7 +94,7 @@ void push_to_stack(double value)
 
 /*
 description: this is the pop function of the stack.
-Author: Ved vyas
+Author: Dilon Brahmbhatt
 Created: 05 march, 2026
 Modified: 05 march, 2026
 */
@@ -110,7 +110,7 @@ double pop_from_stack(void)
 
 /*
 description: this function takes the character using getchar and check buffer values available or not.
-Author: Ved vyas
+Author: Dilon Brahmbhatt
 Created: 05 march, 2026
 Modified: 05 march, 2026
 */
@@ -124,7 +124,7 @@ int16_t get_character()
 
 /*
 description: this is the pushback function used for extracting values from the buffer.
-Author: Ved vyas
+Author: Dilon Brahmbhatt
 Created: 05 march, 2026
 Modified: 05 march, 2026
 */
