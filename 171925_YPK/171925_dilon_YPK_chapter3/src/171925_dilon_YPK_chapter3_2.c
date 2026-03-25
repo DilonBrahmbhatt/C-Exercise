@@ -18,7 +18,7 @@ Modified: 18 march, 2026
 */
 
 #include <stdio.h>
-#include "../inc/c3_YPK.h"
+#include "../inc/YPK.h"
 #define MAX 100
 
 char *xstr(char *string1, char *string2)

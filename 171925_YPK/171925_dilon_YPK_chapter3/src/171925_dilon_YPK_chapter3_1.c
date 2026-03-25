@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "../inc/c3_YPK.h"
+#include "../inc/YPK.h"
 
 // Custom strstr function to find substring
 char *xstrstr(char *string1, char *string2) {

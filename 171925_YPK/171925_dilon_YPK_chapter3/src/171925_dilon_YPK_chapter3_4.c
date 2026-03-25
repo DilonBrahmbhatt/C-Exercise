@@ -17,7 +17,7 @@ Modified: 19 march, 2026
 #define MAX 500
 /*
 description: this is the compression function which remove multiple blanks
-author: ved vyas
+author: Dilon Brahmbhatt
 Created: 19 march, 2026
 Modified: 19 march, 2026
 */
@@ -47,7 +47,7 @@ void compress(char *original, char *compressed, char spaceCount[], int *countSiz
 }
 /*
 description: this is the compression function which remove multiple blanks
-author: ved vyas
+author: Dilon Brahmbhatt
 Created: 19 march, 2026
 Modified: 19 march, 2026
 */

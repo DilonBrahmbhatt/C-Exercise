@@ -8,12 +8,17 @@ Modified: 24 february, 2026
 #define C3_YPK_H
 
 #include <stdint.h>
-void find_first_occurence();
 void C3_YPK_switch();
-void clear_input_buffer();
-void switch_choose_module();
+void C4_YPK_switch();
+
 int16_t mgetline(char s[], int16_t lim);
+void clear_input_buffer();
+
+void find_first_occurence();
+void switch_choose_module();
+void alpha_sort();
 void find_substring();
 void encode_decode();
-/* All module-2 task prototypes */
+
+void determinantFind();
 #endif

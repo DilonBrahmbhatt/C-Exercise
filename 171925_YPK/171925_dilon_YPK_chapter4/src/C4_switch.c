@@ -10,27 +10,19 @@ Modified: 18 march, 2026
 #include <stdint.h>
 #include "../inc/YPK.h"
 
-void C3_YPK_switch()
+void C4_YPK_switch()
 {
         int16_t choice;
     bool c = true;
 
     while(c) {
-        printf("\n- YPK chapter 3 function list -\n");
+        printf("\n- YPK chapter 4 function list -\n");
         printf("Enter choice: ");
         c=false;
         scanf("%hu", &choice);
         switch(choice) {
-                case 1: find_first_occurence();
+                case 1: determinantFind();
                         break;
-                case 2: find_substring();
-                        break;
-                case 3: alpha_sort();
-                        break;
-                case 4: compressed_decompressed();
-                        break;
-		case 5: encode_decode();
-			break;
                 case 0: exit(0);
                 default: printf("Invalid selection.\n");
 }
