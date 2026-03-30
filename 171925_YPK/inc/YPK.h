@@ -21,4 +21,5 @@ void find_substring();
 void encode_decode();
 
 void determinantFind();
+void linkedList_operations();
 #endif
