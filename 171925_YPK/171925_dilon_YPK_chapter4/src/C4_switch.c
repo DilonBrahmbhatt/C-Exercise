@@ -23,8 +23,10 @@ void C4_YPK_switch()
         switch(choice) {
                 case 1: determinantFind();
                         break;
-		case 2: linkedList_operations();
+		case 2: file_Attributes();
 			break;
+                case 3: f_and_d_short();
+                        break;
                 case 0: exit(0);
                 default: printf("Invalid selection.\n");
 }

@@ -21,5 +21,7 @@ void find_substring();
 void encode_decode();
 
 void determinantFind();
+void file_Attributes();
+void f_and_d_short();
 void linkedList_operations();
 #endif
