@@ -2,12 +2,13 @@
 this will contain defination of all the function.
 Author: Dilon Brahmbhatt
 Created: 06 february, 2026
-Modified: 06 march, 2026
+Modified: 01 april, 2026
 */
 
 #ifndef HEADER_H
 #define HEADER_H
 #include <stdint.h>
+#include <stdbool.h>
 
 /* stack related function declaration */
 #define MAX_TOKEN_LEN 100
@@ -17,6 +18,28 @@ Modified: 06 march, 2026
 #define STACK_SIZE 100
 #define MAXLINE 1000
 
+/* Stack functions */
+void push_to_stack(double value);
+double pop_from_stack(void);
+
+/* Input buffer functions */
+int16_t get_character(void);
+void pushback_character(int16_t ch);
+
+/* Token reader */
+int16_t get_token(char token[]);
+void clearsp();
+void print_stack();
+
+/* getline and ungets function declaration */
+void ungets(char s[]);
+int16_t mgetline(char line[], int16_t maxline);
+
+/* updated getch and ungetch functions for quesion 9 */
+int16_t getch();
+void ungetch(int16_t c);
+int16_t getop(char token[]);
+
 /*main switch function for getting module*/
 void switch_choose_program();
 
@@ -25,6 +48,7 @@ void DR_M1_switch();
 void DR_M2_switch();
 void DR_M3_switch();
 void DR_M4_switch();
+void DR_M5_switch();
 
 /*common function*/
 void reverse_string(char str[]);
@@ -40,6 +64,7 @@ void ungets(char s[]);
 int16_t getch();
 void ungetch(int16_t c);
 int16_t getop(char token[]);
+void clear_input_buffer();
 
 /*all module1 function definarion*/
 void hellow_world();
@@ -100,6 +125,12 @@ void RPN_using_static_var_function();
 void itoa_using_recursion();
 void swap_duplicate_top();
 void macro_swap();
+
+/*all module5 function definarion*/
+void validNumberRPN();
+void validFloatRPN();
+void strcatMain();
+void strend_main();
 
 #endif /* HEADER_H */
 

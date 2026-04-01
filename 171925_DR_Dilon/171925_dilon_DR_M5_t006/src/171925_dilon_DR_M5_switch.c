@@ -4,13 +4,13 @@
 #include <stdint.h>
 #include "header.h"
 /*
-switch program to call any function from DR3.
+switch program to call any function from DR5.
 Author: Dilon Brahmbhatt
-Created: 24 february, 2026
-Modified: 25 february, 2026
+Created: 30 march, 2026
+Modified: 01 april, 2026
 */
 
-void DR_M3_switch() {
+void DR_M5_switch() {
     int8_t choice;
     bool c=true;
     while(c) {
@@ -20,25 +20,19 @@ void DR_M3_switch() {
 
         switch(choice) {
                 case 1:
-			binary_search_main();
+			validNumberRPN();
 			break;
 		case 2:
-			replace_newline_tab();
+			validFloatRPN();
 			break;
 		case 3:
-			expand_main();
+			strcatMain();
 			break;
 		case 4:
-			input_and_convert();
-			break;
-		case 5:
-			Digit_and_Base();
-			break;
-		case 6:
-			Min_field_width();
+			strend_main();
 			break;
 		default:
-			break;
+                        break;
 }
 }
 }

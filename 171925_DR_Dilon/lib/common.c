@@ -17,7 +17,7 @@ Modified: 11 february, 2026
 switch program to call any DR.
 Author: Dilon Brahmbhatt
 Created: 06 february, 2026
-Modified: 11 february, 2026
+Modified: 01 april, 2026
 */
 void switch_choose_program() {
     uint8_t choice;
@@ -40,6 +40,9 @@ void switch_choose_program() {
 	case 4:
 		DR_M4_switch();
 		break;
+        case 5:
+                DR_M5_switch();
+                break;
 	  default:
                printf("enter valid input");
 	       break;
@@ -370,4 +373,10 @@ int16_t getop(char token[])
         ungetch(ch);
 
     return NUMBER_TOKEN;
+}
+
+void clear_input_buffer()
+{
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
 }
