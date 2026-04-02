@@ -34,7 +34,6 @@ void alpha_sort()
     int8_t outer_index, inner_index;
     char *temp;
 
-    // Bubble Sort
     for (outer_index = 0; outer_index < number - 1; outer_index++)
     {
         for (inner_index = 0; inner_index < number - outer_index - 1; inner_index++)
