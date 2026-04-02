@@ -1,5 +1,5 @@
 /*
-discribtion: getch() and ungetch() is just pushing and popping the data from buffer which is array because we are assuming that there may be more than one character.
+discribtion:Our getch and ungetch do not handle a pushed-back EOF correctly. Decide what their properties ought to be if an EOF is pushed back, then implement your design.
 Author: Dilon Brahmbhatt
 Created: 06 march, 2026
 Modified: 06 march, 2026

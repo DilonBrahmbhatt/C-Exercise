@@ -1,6 +1,5 @@
 /*
-description: Write a routine ungets(s) that will push back an entire string onto the input.
-                 Should ungets know about buf and bufp, or should it just use ungetch?
+description:Suppose that there will never be more than one character of pushback. Modify getch and ungetch accordingly.
 Author :Dilon Brahmbhatt
 Created: 06 march, 2026
 Modified: 06 march, 2026
@@ -30,35 +29,35 @@ while (1)
         case NUMBER_TOKEN:
             push_to_stack(atof(token));
             break;
- 
+
         case '+':
             push_to_stack(pop_from_stack() + pop_from_stack());
             break;
- 
+
         case '*':
             push_to_stack(pop_from_stack() * pop_from_stack());
             break;
- 
+
         case '-':
             operand2 = pop_from_stack();
             push_to_stack(pop_from_stack() - operand2);
             break;
- 
+
         case '/':
             operand2 = pop_from_stack();
- 
+
             if (operand2 != 0.0)
                 push_to_stack(pop_from_stack() / operand2);
             else
                 printf("zero divisor\n");
- 
+
             break;
- 
+
         case '%':
         {
         operand2 = pop_from_stack();
         double operand1 = pop_from_stack();
- 
+
     if (operand2 != 0.0)
         {
         double result = fmod(fmod(operand1, operand2) + operand2, operand2);

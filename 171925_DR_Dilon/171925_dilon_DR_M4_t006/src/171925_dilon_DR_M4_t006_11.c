@@ -104,27 +104,27 @@ char next_character;
 if (c == '-')
     {
          next_character = getchar();
- 
+
        if (!isdigit(next_character) && next_character != '.')
         {
             return c;
         }
     }
- 
- 
+
+
     if (!isdigit(c) && c != '.' && c != '-')
     {
         return c;
     }
- 
+
     i = 0;
- 
+
     if (c == '-')
     {
         s[i++] = c;
         c = next_character;
     }
- 
+
     if (isdigit(c))
     {
         do
@@ -133,7 +133,7 @@ if (c == '-')
             c = getchar();
         } while (isdigit(c));
     }
- 
+
    if (c == '.')
     {
         do
@@ -142,10 +142,10 @@ if (c == '-')
             c = getchar();
         } while (isdigit(c));
     }
- 
+
     s[i] = '\0';
- 
+
     prev_character = c;
- 
+
     return NUMBER_TOKEN;
 }
