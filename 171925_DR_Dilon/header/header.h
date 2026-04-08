@@ -131,6 +131,6 @@ void validNumberRPN();
 void validFloatRPN();
 void strcatMain();
 void strend_main();
-
+void ReadWriteLines();
 #endif /* HEADER_H */
 

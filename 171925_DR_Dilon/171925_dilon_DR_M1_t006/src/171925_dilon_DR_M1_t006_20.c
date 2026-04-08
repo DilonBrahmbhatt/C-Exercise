@@ -28,21 +28,21 @@ void detab_input_stream()
         /* If space sequence ended */
         if (space_count > 0)
         {
-            int16_t needed = TABSIZE - ((index - 1) % TABSIZE);
+            int16_t needed = (TABSIZE - ((index - 1) % TABSIZE)) % TABSIZE;
                 space_count = needed;
- 
+
             for (int i = 0; i < space_count; i++)
             {
                 putchar(' ');
                 index++;
             }
- 
+
             space_count = 0;
         }
- 
+
         if (ch == '\t')
         {
-            int16_t spaces = TABSIZE - ((index - 1) % TABSIZE);
+            int16_t spaces = (TABSIZE - ((index - 1) % TABSIZE)) % TABSIZE;;
             for (int i = 0; i < spaces; i++)
             {
                 putchar(' ');

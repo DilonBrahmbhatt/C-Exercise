@@ -31,6 +31,21 @@ void DR_M5_switch() {
 		case 4:
 			strend_main();
 			break;
+                case 5:
+                        cpy_Cmp_Cat();
+                        break;
+                case 6:
+                        strend_main();
+                        break;
+                case 7:
+                        ReadWriteLines();
+                        break;
+                case 8:
+                        main_day_of_year();
+                        break;
+                case 9:
+                        main_day_of_year_using_pointer();
+                        break;
 		default:
                         break;
 }

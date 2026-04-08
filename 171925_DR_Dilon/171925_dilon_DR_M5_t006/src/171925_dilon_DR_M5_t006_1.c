@@ -43,7 +43,7 @@ int16_t getint_updated(int16_t *pn) {
 void validNumberRPN()
 {
     int16_t n,s,array[SIZE];
-        printf("enter a number:");
+    printf("enter a number:");
     for(n=0;n<SIZE && getint_updated(&array[n]) !=EOF; n++){
         printf("storing in n = %d, getint %d\n", n, array[n]);
     }
