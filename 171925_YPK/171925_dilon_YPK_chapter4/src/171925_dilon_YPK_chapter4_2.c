@@ -5,7 +5,7 @@
 void displayAttributes(const char *filename) {
     struct stat fileStat;
 
-    if (stat(filename, &fileStat) < 0) {
+   if (stat(filename, &fileStat) < 0) {
         printf("Error: Cannot read file attributes.\n");
         return;
     }
@@ -46,7 +46,7 @@ void changeAttributes(const char *filename) {
 
 void file_Attributes() {
     char filename[100];
-    int8_t choice;
+    int choice;
 
     printf("Enter filename: ");
     scanf("%s", filename);
@@ -57,7 +57,7 @@ void file_Attributes() {
         printf("2. Change Attributes\n");
         printf("3. Exit\n");
         printf("Enter choice: ");
-        scanf("%hd", &choice);
+        scanf("%d", &choice);
 
         switch (choice) {
             case 1: displayAttributes(filename); break;
