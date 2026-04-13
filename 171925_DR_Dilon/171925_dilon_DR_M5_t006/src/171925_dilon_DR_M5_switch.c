@@ -62,9 +62,16 @@ void DR_M5_switch(int16_t argc, char *argv[]) {
                         process_args(argc, argv);
                         ReadLineTail(argc,argv);
                         break;}
+                case 14:{
+                        process_args(argc, argv);
+                        ReverseSorting(argc,argv);
+                        break;}
+                case 15:{
+                        process_args(argc, argv);
+                        FoldingAlphabets(argc,argv);
+                        break;}
 		default:
                         break;
 }
 }
 }
-

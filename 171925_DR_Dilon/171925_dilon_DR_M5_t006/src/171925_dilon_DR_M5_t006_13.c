@@ -16,6 +16,8 @@ Modified: 07 april, 2026
 #include <math.h>
 #include "header.h"
 
+
+
 /*
 description: This is a custom writeline function design to print last n lines
 Author: Dilon Brahmhatt
@@ -35,7 +37,7 @@ Created: 08 april, 2026
 Modified: 08 april, 2026
 */
 void ReadLineTail(int16_t argc, char *argv[])
-{
+{  int16_t MAXLINES=100;
         int16_t num = 10;
     char *lineptr[MAXLINES];
     int16_t nlines;

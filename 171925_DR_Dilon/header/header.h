@@ -136,5 +136,7 @@ void ReadWriteLines();
 void reverse_polish_calculator_with_argv();
 void HandleEntabDetabArgs(int16_t argc, char *argv[]);
 void ShortHandDetabEntab(int16_t argc, char *argv[]);
+void ReverseSorting(int16_t argc, char *argv[]);
+void FoldingAlphabets(int16_t argc, char *argv[]);
 #endif /* HEADER_H */
 
