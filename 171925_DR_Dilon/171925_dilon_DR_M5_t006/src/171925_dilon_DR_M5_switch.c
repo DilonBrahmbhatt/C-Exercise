@@ -70,6 +70,10 @@ void DR_M5_switch(int16_t argc, char *argv[]) {
                         process_args(argc, argv);
                         FoldingAlphabets(argc,argv);
                         break;}
+                case 16:{
+                        process_args(argc, argv);
+                        FoldingAndDirectoryOrder(argc,argv);
+                        break;}
 		default:
                         break;
 }
