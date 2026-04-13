@@ -76,7 +76,7 @@ void DR_M1_switch() {
                 reverse_line();
                 break;
           case 20:
-                detab_input_stream();
+                detab_input_stream(4);
                 break;
           case 21:
                 entab_input_text_stream();

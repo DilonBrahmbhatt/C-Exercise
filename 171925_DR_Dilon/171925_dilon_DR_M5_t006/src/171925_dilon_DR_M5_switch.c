@@ -10,10 +10,10 @@ Created: 30 march, 2026
 Modified: 01 april, 2026
 */
 
-void DR_M5_switch() {
+void DR_M5_switch(int16_t argc, char *argv[]) {
     int8_t choice;
     bool c=true;
-    while(c) {
+  while(c) {
         printf("\nfunction:\n");
         c=false;
         scanf("%hhu", &choice);
@@ -46,8 +46,25 @@ void DR_M5_switch() {
                 case 9:
                         main_day_of_year_using_pointer();
                         break;
+		case 10:{
+                        process_args(argc, argv);
+                        reverse_polish_calculator_with_argv();
+                        break;}
+		case 11:{
+                        process_args(argc, argv);
+                        HandleEntabDetabArgs(argc,argv);
+                        break;}
+                case 12:{
+                        process_args(argc, argv);
+                        ShortHandDetabEntab(argc,argv);
+                        break;}
+                case 13:{
+                        process_args(argc, argv);
+                        ReadLineTail(argc,argv);
+                        break;}
 		default:
                         break;
 }
 }
 }
+

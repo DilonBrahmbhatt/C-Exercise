@@ -41,14 +41,14 @@ void ungetch(int16_t c);
 int16_t getop(char token[]);
 
 /*main switch function for getting module*/
-void switch_choose_program();
+void switch_choose_program(int16_t argc, char *argv[]);
 
 /*each module switch function*/
 void DR_M1_switch();
 void DR_M2_switch();
 void DR_M3_switch();
 void DR_M4_switch();
-void DR_M5_switch();
+void DR_M5_switch(int16_t argc, char *argv[]);
 
 /*common function*/
 void reverse_string(char str[]);
@@ -65,6 +65,7 @@ int16_t getch();
 void ungetch(int16_t c);
 int16_t getop(char token[]);
 void clear_input_buffer();
+void process_args(int16_t argc, char *argv[]);
 
 /*all module1 function definarion*/
 void hellow_world();
@@ -86,7 +87,7 @@ void find_longest_line();
 void print_lines_longer_than_8();
 void remove_trailing_blanks_tabs();
 void reverse_line();
-void detab_input_stream();
+void detab_input_stream(int16_t TABSIZE);
 void entab_input_text_stream();
 void fold_line();
 
@@ -132,5 +133,8 @@ void validFloatRPN();
 void strcatMain();
 void strend_main();
 void ReadWriteLines();
+void reverse_polish_calculator_with_argv();
+void HandleEntabDetabArgs(int16_t argc, char *argv[]);
+void ShortHandDetabEntab(int16_t argc, char *argv[]);
 #endif /* HEADER_H */
 

@@ -7,13 +7,11 @@ Modified: 12 february, 2026
 */
 #include <stdio.h>
 #include <stdint.h>
-
-#define TABSIZE 4
-
-void detab_input_stream()
+#include "header.h"
+void detab_input_stream(int16_t TABSIZE)
 {
     int16_t ch;
-     int16_t index = 1;
+    int16_t index = 1;
     int16_t space_count = 0;
   printf("press ctrl + D to escape the string\n");
     printf("Enter the String: ");
@@ -42,7 +40,7 @@ void detab_input_stream()
 
         if (ch == '\t')
         {
-            int16_t spaces = (TABSIZE - ((index - 1) % TABSIZE)) % TABSIZE;;
+            int16_t spaces = TABSIZE - ((index - 1) % TABSIZE);;
             for (int i = 0; i < spaces; i++)
             {
                 putchar(' ');

@@ -8,8 +8,8 @@ Modified: 06 february, 2026
 #include<stdint.h>
 #include "header.h"
 
-int main()
+int main(int16_t argc,char *argv[])
 {
-switch_choose_program();
+switch_choose_program(argc,argv);
 return 0;
 }

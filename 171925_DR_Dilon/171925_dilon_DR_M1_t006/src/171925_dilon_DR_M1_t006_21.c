@@ -13,7 +13,7 @@ void entab_input_text_stream()
 {
     int16_t ch;
     int8_t space_count=0;
-    printf("--------press ctrl + D to escape the string--------\n");
+    printf("press ctrl + D to escape the string\n");
     printf("Enter the String: ");
 
     while ((ch = getchar()) != EOF)

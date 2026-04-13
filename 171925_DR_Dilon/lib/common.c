@@ -12,14 +12,14 @@ Modified: 11 february, 2026
 #include <ctype.h>
 #include <string.h>
 #include "header.h"
-
+int16_t TABSIZE = 4;
 /*
 switch program to call any DR.
 Author: Dilon Brahmbhatt
 Created: 06 february, 2026
 Modified: 01 april, 2026
 */
-void switch_choose_program() {
+void switch_choose_program(int16_t argc, char *argv[]) {
     uint8_t choice;
     bool c=true;
     while(c) {
@@ -41,7 +41,7 @@ void switch_choose_program() {
 		DR_M4_switch();
 		break;
         case 5:
-                DR_M5_switch();
+                DR_M5_switch(argc,argv);
                 break;
 	  default:
                printf("enter valid input");
@@ -380,3 +380,20 @@ void clear_input_buffer()
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
+
+/*
+description: this function handles argc and argv for RPN calculator.
+Author: Dilon Brahmbhatt
+Created: 06 april, 2026
+Modified: 06 april, 2026
+*/
+void process_args(int16_t argc, char *argv[])
+{
+        bufferPosition = 0;
+     while (argc-- > 1) {
+        ungets(" ");
+        ungets(argv[argc]);
+    }
+}
+
+
