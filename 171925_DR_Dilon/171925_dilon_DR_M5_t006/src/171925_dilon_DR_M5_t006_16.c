@@ -1,6 +1,6 @@
 /*
 description:Add the -d (``directory order'') option, which makes comparisons only on letters,
-                 numbers and blanks. Make sure it works in conjunction with -f.
+            numbers and blanks. Make sure it works in conjunction with -f.
 Author: Dilon Brahmbhatt
 Created: 09 april, 2026
 Modified: 09 april, 2026

@@ -1,3 +1,9 @@
+/*
+discribtion:There is no error checking in day_of_year or month_day. Remedy this defect.
+author: Dilon Brahmbhatt
+created date: 30-03-2026
+modified date: 01-04-2026
+*/
 #include <stdio.h>
 #include <stdint.h>
 #include <inttypes.h>

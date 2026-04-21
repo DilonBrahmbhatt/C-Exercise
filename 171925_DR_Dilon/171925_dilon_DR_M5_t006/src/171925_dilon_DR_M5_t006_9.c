@@ -1,3 +1,9 @@
+/*
+Discribtion:Rewrite the routines day_of_year and month_day with pointers instead of indexing.
+author: Dilon Brahmbhatt
+created date: 30-03-2026
+modified date: 01-04-2026
+*/
 #include <stdio.h>
 #include <stdint.h>
 
@@ -10,7 +16,7 @@ static const uint8_t day_table[2][13] = {
 int16_t day_of_year_pointer(int32_t year, uint8_t month, uint8_t day) {
     uint8_t is_leap_year;
     const uint8_t *ptr_month_days;
-    int16_t total_day = day; /* Use 16-bit to prevent overflow (max 366) */
+    int16_t total_day = day;
 
     is_leap_year = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 

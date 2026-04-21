@@ -29,3 +29,4 @@ printf("enter string T :");
 printf("combined string :");
     printf("%s", string1);
 }
+

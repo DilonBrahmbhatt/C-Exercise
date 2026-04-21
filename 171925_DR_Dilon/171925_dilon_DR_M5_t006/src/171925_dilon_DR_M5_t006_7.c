@@ -1,8 +1,6 @@
 /*
-description:Write versions of the library functions strncpy, strncat, and strncmp,
-                 which operate on at most the first n characters of their argument
-                strings. For example, strncpy(s,t,n) copies at most n characters of t to s.
-                Full descriptions are in Appendix B.
+description:Rewrite readlines to store lines in an array supplied by main, rather than calling alloc to maintain storage.
+            How much faster is the program?
 author: Dilon Brahmbhatt
 created date: 30-03-2026
 modified date: 01-04-2026
@@ -25,7 +23,7 @@ modified date: 03-04-2026
 */
 int readlines(char *lineptr[], int maxlines)
 {
-   int len, nlines;
+    int len, nlines;
     static char p[MAXLEN];
     char line[MAXLEN];
     nlines = 0;
@@ -123,4 +121,5 @@ myqsort(lineptr, 0, nlines - 1);
     printf("\nStored Lines:\n");
     writelines(lineptr, nlines);
 }
+
 

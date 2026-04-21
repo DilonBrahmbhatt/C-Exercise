@@ -74,6 +74,14 @@ void DR_M5_switch(int16_t argc, char *argv[]) {
                         process_args(argc, argv);
                         FoldingAndDirectoryOrder(argc,argv);
                         break;}
+                case 17:{
+                        process_args(argc, argv);
+                        SortCategoryPage(argc,argv);
+                        break;}
+                case 18:{
+                        process_args(argc, argv);
+                        DeclarationToWords(argc,argv);
+                        break;}
 		default:
                         break;
 }

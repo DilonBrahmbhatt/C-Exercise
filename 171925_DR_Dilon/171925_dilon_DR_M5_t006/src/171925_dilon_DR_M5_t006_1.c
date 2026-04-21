@@ -14,40 +14,46 @@ Modified: 27 march, 2026
 
 int16_t getint_updated(int16_t *pn) {
     int8_t c, sign;
-
     while (isspace(c = get_character()));
-
     if (!isdigit(c) && c != EOF && c != '+' && c != '-') {
         pushback_character(c); /* it's not a number */
-        return -1; /* -1 will end the program directly */
+        printf("invalid Entry!!");
+        return 0;
     }
-
     sign = (c == '-') ? -1 : 1;
-
     if (c == '+' || c == '-')
         c = get_character();
-
     if (!isdigit(c))
-        return 0;
+        {
+        printf("invalid Entry!!");
+         return 0;
+}
     for (*pn = 0; isdigit(c); c = get_character())
         *pn = 10 * *pn + (c - '0');
-
     *pn *= sign;
-
     if (c != EOF)
         pushback_character(c);
-
-    return c;
+    return 1;
 }
-
-void validNumberRPN()
-{
-    int16_t n,s,array[SIZE];
-    printf("enter a number:");
-    for(n=0;n<SIZE && getint_updated(&array[n]) !=EOF; n++){
-        printf("storing in n = %d, getint %d\n", n, array[n]);
+void validNumberRPN() {
+    int16_t n = 0, array[SIZE];
+    int16_t status;
+    printf("Enter numbers (Ctrl+D or EOF to stop):\n");
+    while (n < SIZE) {
+        printf("[%d] Enter a number: ", n);
+        status = getint_updated(&array[n]);
+        if (status == EOF) {
+            break;
+        } else if (status == 0) {
+     continue;
+        } else {
+            printf("Stored: %d\n", array[n]);
+            n++;
+        }
     }
-    printf("storing in n = %d, getint %d\n", n, array[n]);
-    for(s=0;s<=n; s++)
-        printf("%d",array[s]);
+    printf("\nStored Numbers");
+    for (int s = 0; s < n; s++) {
+        printf("\nIndex %d: %d", s, array[s]);
+    }
 }
+

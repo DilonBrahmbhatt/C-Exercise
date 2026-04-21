@@ -9,22 +9,21 @@ modified date: 30-03-2026
 */
 #include<stdio.h>
 #include<ctype.h>
+#include<stdint.h>
 #include "header.h"
-
 /*
-description: this is string copy function using pointers.
+description: this is string copy function using pointers
 author: Dilon Brahmbhatt
 created date: 30-03-2026
 modified date: 30-03-2026
 */
 char *strncpy(char *dest, const char *src, size_t n)
     {
-        for(int i = 0; i<n && *src != '\0'; i++){
+        for(int8_t index = 0; index<n && *src != '\0'; index++){
             *dest++ = *src++;
         }
         return &dest;
     }
- 
 /*
 description: this is string concatination function using pointers.
 author: Dilon Brahmbhatt
@@ -37,14 +36,13 @@ char *strncat(char *dest, const char *src, size_t n)
     {
         *dest++;
     }
-    for(int i = 0; i<n && *src != '\0'; i++){
+    for(int8_t index = 0; index<n && *src != '\0'; index++){
             *dest++ = *src++;
         }
 }
- 
 /*
 description: this is string comparison function using pointers.
-author:Dilon Brahmbhatt
+author: Dilon Brahmbhatt
 created date: 30-03-2026
 modified date: 30-03-2026
 */
@@ -56,7 +54,6 @@ int8_t strncmp(const char *dest, const char *src, size_t n){
     }
     return *dest - *src;
 }
- 
 /*
 description: this is the main function of program which handle input outputs.
 author: Dilon Brahmbhatt
@@ -69,37 +66,40 @@ void cpy_Cmp_Cat()
     char str2[MAXLINE];
 int8_t result;
 int8_t choose;
+int8_t num;
     clear_input_buffer();
-
     printf("Enter a string: ");
     mgetline(str1, MAXLINE);
-
     printf("Enter substring to search: ");
     mgetline(str2, MAXLINE);
+printf("Enter the Size : ");
+scanf("%hhd", &num);
         printf("1. copy string! \n");
         printf("2. concat string! \n");
         printf("3. compare string! \n");
         printf("Enter the operation Number :");
         scanf("%hhd", &choose);
         switch(choose){
-                case 1: strncpy(str1, str2, 6);
-                        printf("Copied (n): %s\n\n", str1);
+                case 1: strncpy(str1, str2, num);
+                        printf("result: %s\n\n", str1);
                         break;
-                case 2: strncat(str1, str2, 6);
-                        printf("cat (n): %s\n\n", str1);
+                case 2: strncat(str1, str2, num);
+                        printf("result: %s\n\n", str1);
                         break;
                 case 3:
                         {
-                        result = strncmp(str1, str2, 3);
+                        result = strncmp(str1, str2, num);
                         if(result>0)
                         {
                         result = 1;
+                        printf("result: match not found \n");
                                 }else if(result < 0)
                         {
                         result = -1;
+                                printf("result: match not found \n");
                                 }
                         else{
-                                result = 0;
+                                printf("result: match found \n");
                         }
                         printf("cat (n): %d\n\n", result);
                          break;

@@ -79,21 +79,24 @@ void etab_using_custom_column(int16_t start_col)
                 if(space_count==TABSIZE)
                  {
                         space_count=0;
-                        putchar('/');
-                        putchar('t');
+                        //putchar('/');
+                        //putchar('t');
+			putchar('#');
                  }
            }
           else if(ch == 9)
            {
-                 putchar('/');
-                 putchar('t');
+                 //putchar('/');
+                 //putchar('t');
+		putchar('#');
                 space_count=0;
            }
           else
            {
                         while(space_count>0)
                          {
-                                putchar(32);
+                                //putchar(32);
+                                putchar('*');
                                 space_count--;
                          }
                         putchar(ch);

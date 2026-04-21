@@ -1,10 +1,10 @@
 /*
-discribtion: Given the basic framework, it's straightforward to extend the calculator. Add the modulus (%) operator and provisions for negative numbers.
+discribtion:Write the program expr, which evaluates a reverse Polish expression from the command line, where each operator or
+            operand is a separate argument.
 Author: Dilon Brahmbhatt
 Created: 06 april, 2026
 Modified: 06 april, 2026
 */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -16,29 +16,22 @@ void reverse_polish_calculator_with_argv()
     double operand2;
     char token[MAX_TOKEN_LEN];
     while ((tokenType = get_token(token)) != EOF) {
- 
         switch (tokenType) {
- 
         case NUMBER_TOKEN:
             push_to_stack(atof(token));
             break;
- 
         case '+':
             push_to_stack(pop_from_stack() + pop_from_stack());
             break;
- 
         case '*':
             push_to_stack(pop_from_stack() * pop_from_stack());
             break;
- 
         case '-':
             operand2 = pop_from_stack();
             push_to_stack(pop_from_stack() - operand2);
             break;
- 
         case '/':
             operand2 = pop_from_stack();
- 
             if (operand2 != 0.0)
                 push_to_stack(pop_from_stack() / operand2);
             else

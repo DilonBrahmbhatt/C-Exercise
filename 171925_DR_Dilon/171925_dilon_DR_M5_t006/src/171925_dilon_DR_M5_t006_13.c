@@ -16,8 +16,6 @@ Modified: 07 april, 2026
 #include <math.h>
 #include "header.h"
 
-
-
 /*
 description: This is a custom writeline function design to print last n lines
 Author: Dilon Brahmhatt

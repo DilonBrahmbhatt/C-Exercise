@@ -18,6 +18,19 @@ Modified: 01 april, 2026
 #define STACK_SIZE 100
 #define MAXLINE 1000
 
+#define MAXLEN 10000
+#define MAXTOKEN 100
+#define NAMES 1000
+#define PARENS 1001
+#define BRACKETS 1002
+
+extern int tokentype;
+extern char token[MAXTOKEN];
+extern char name[MAXTOKEN];
+extern char datatype[MAXTOKEN];
+extern char out[1000];
+extern int error;
+
 /* Stack functions */
 void push_to_stack(double value);
 double pop_from_stack(void);
@@ -49,6 +62,7 @@ void DR_M2_switch();
 void DR_M3_switch();
 void DR_M4_switch();
 void DR_M5_switch(int16_t argc, char *argv[]);
+void DR_M6_switch(int16_t argc, char *argv[]);
 
 /*common function*/
 void reverse_string(char str[]);
@@ -139,5 +153,51 @@ void ShortHandDetabEntab(int16_t argc, char *argv[]);
 void ReverseSorting(int16_t argc, char *argv[]);
 void FoldingAlphabets(int16_t argc, char *argv[]);
 void FoldingAndDirectoryOrder(int16_t argc, char *argv[]);
+void SortCategoryPage(int argc, char *argv[]);
+/*all module6 function definarion*/
+
+void FrequecyOfKeywords();
+int16_t BSTHandlingVariableCount(int16_t argc, char *argv[]);
+void LinePrintingWithWordCount();
+void SortDecendingOccurence();
+void InstallUndef();
+struct word_node *add_word_to_tree(struct word_node *node, char *w);
+int find_filter_word(char *target, const char *list[], int size);
+int fetch_next_word(char *buffer, int limit);
+/* struct declaration */
+struct key {
+    char *word;
+    int16_t count;
+};
+/* declare keytab */
+extern struct key keytab[];
+extern int16_t NKEYS;
+#define MAXWORD 100
+#define MAX_STR_LEN 500
+#define TOTAL_FILTER_WORDS 124
+extern const char *filter_list[TOTAL_FILTER_WORDS];
+struct word_node {
+    char *text;
+    int16_t occurrence_count;
+    struct word_node *left_child;
+    struct word_node *right_child;
+    bool line_flags[100]; // Increased size slightly for safety
+};
+extern int current_line_num;
+void display_tree_data(struct word_node *node);
+#define HASHSIZE 101
+#define MAX 100
+struct nlist {
+    struct nlist *next;
+    char *name;
+    char *defn;
+};
+unsigned hash(char *s);
+struct nlist *lookup(char *s);
+struct nlist *install(char *name, char *defn);
+struct nlist *undef(char *name);
+
+
+
 #endif /* HEADER_H */
 

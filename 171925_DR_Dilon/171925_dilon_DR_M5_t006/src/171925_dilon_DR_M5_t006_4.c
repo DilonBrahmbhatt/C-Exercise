@@ -1,6 +1,5 @@
 /*
-description: Write a pointer version of the function strcat that we showed in Chapter 2:
-                strcat(s,t) copies the string t to the end of s.
+description: Write the function strend(s,t), which returns 1 if the string t occurs at the end of the string s, and zero otherwise
 author: Dilon Brahmbhatt
 created date: 30-03-2026
 modified date: 30-03-2026

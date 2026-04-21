@@ -1,8 +1,7 @@
 /*
-description:Write versions of the library functions strncpy, strncat, and strncmp,
-                 which operate on at most the first n characters of their argument
-                strings. For example, strncpy(s,t,n) copies at most n characters of t to s.
-                Full descriptions are in Appendix B.
+description:Rewrite appropriate programs from earlier chapters and exercises with pointers instead of array indexing.
+            Good possibilities include getline (Chapters 1 and 4), atoi, itoa, and their variants (Chapters 2, 3, and 4),
+            reverse (Chapter 3), and strindex and getop (Chapter 4).
 author: Dilon Brahmbhatt
 created date: 30-03-2026
 modified date: 01-04-2026
@@ -16,7 +15,6 @@ modified date: 01-04-2026
 #include "header.h"
 
 /*
-
 description: this is getline function implemented with pointer.
 author: Dilon Brahmbhatt
 created date: 30-03-2026
@@ -121,63 +119,34 @@ int getTokenPtr(char *token)
     int ch;
     char *t = token;
     while ((ch = get_character()) == ' ' || ch == '\t');
-
     *t++ = ch;
-
     *t = '\0';
-
     if (islower(ch))
-
     {
-
         while (islower(*t++ = ch = get_character()));
-
         *(t - 1) = '\0';
-
         if (ch != EOF)
-
             pushback_character(ch);
-
        return NAME;
-
     }
-
     if (!isdigit(ch) && ch != '.' && ch != '-')
-
         return ch;
-
     if (ch == '-')
-
     {
-
         int next = get_character();
-
         if (!isdigit(next) && next != '.')
-
         {
-
             pushback_character(next);
-
             return '-';
-
         }
-
         *t++ = next;
-
         ch = next;
-
     }
- 
     while (isdigit(ch))
-
     {
-
         ch = get_character();
-
         if (isdigit(ch))
-
             *t++ = ch;
-
     }
     if (ch == '.')
     {
@@ -213,11 +182,8 @@ int strindex_ptr(char *mainStr, char *searchStr)
         return lastMatch - mainStr + 1;
     return -1;
 }
-
 void pointerBasedFunctions()
-
 {
-
     int choice;
     char str[MAXLINE], result[MAXLINE];
     int num;

@@ -50,6 +50,14 @@ void switch_choose_program(int16_t argc, char *argv[]) {
     }
 }
 
+int tokentype;
+char token[MAXTOKEN];
+char name[MAXTOKEN];
+char datatype[MAXTOKEN];
+char out[1000];
+int error = 0;
+
+
 /* Stack storage */
 static double stackValues[STACK_SIZE];
 static int16_t stackPointer = 0;
@@ -396,4 +404,181 @@ void process_args(int16_t argc, char *argv[])
     }
 }
 
+ struct key keytab[] = {{"auto", 0}, {"break", 0}, {"case", 0}, {"char", 0},
+              {"const", 0}, {"continue", 0}, {"default", 0}, {"do", 0},
+              {"double", 0}, {"else", 0}, {"enum", 0}, {"extern", 0},
+              {"float", 0}, {"for", 0}, {"goto", 0}, {"if", 0},
+              {"int", 0}, {"long", 0}, {"main",0}, {"register", 0}, {"return", 0},
+              {"short", 0}, {"signed", 0}, {"sizeof", 0}, {"static", 0},
+              {"struct", 0},{"switch", 0}, {"typedef", 0}, {"union", 0},
+              {"unsigned", 0}, {"void", 0}, {"volatite", 0}, {"while", 0}};
+int16_t NKEYS = sizeof(keytab) / sizeof(keytab[0]);
+int16_t binsearch(char *word, struct key lkeytab[], int16_t n) {
+    int16_t cond;
+    int16_t low, high, mid;
+    low = 0;
+    high = n - 1;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if ((cond = strcmp(word, lkeytab[mid].word)) < 0)
+            high = mid - 1;
+        else if (cond > 0)
+            low = mid + 1;
+        else
+            return mid;
+    }
+    return -1;
+}
+int16_t mygetword(char *word, int16_t lim) {
+    int16_t c;
+    char *w = word;
+    while ((c = get_character()) != EOF && isspace(c));
+        if (c == EOF)
+    return EOF;
+    if (c != EOF)
+        *w++ = c;
+    if (!isalnum(c) && c != '_') {
+    if (c == '\"') {
+        while ((c = get_character()) != '\"' && c != EOF);
+    }
+    else if (c == '#') {
+        while ((c = get_character()) != '\n' && c != EOF);
+    }
+    else if (c == '/') {
+        int16_t next = get_character();
+        if (next == '/') {
+            while ((c = get_character()) != '\n' && c != EOF);
+        }
+        else if (next == '*') {
+            int16_t prev = 0;
+            while ((c = get_character()) != EOF) {
+                if (prev == '*' && c == '/')
+                    break;
+                prev = c;
+            }
+        }
+        else {
+            pushback_character(next);
+        }
+    }
 
+    *w = '\0';
+    return c;
+}
+
+    for (int8_t i = 0; i < lim - 1; i++) {
+        c = get_character();
+
+        if (!isalnum(c) && c != '_' && c!= '-') {
+            pushback_character(c);
+            break;
+        } else {
+            *w++ = c;
+        }
+    }
+    *w = '\0';
+    return word[0];
+}
+int current_line_num = 1;
+
+const char *filter_list[TOTAL_FILTER_WORDS] = {
+"after", "all", "also", "am", "an", "and", "another",
+    "any", "are", "as", "at", "be", "because", "been",
+    "before", "being", "between", "both", "but", "by",
+    "came", "can", "come", "could", "did", "do", "each",
+    "for", "from", "get", "got", "had", "has", "have",
+    "he", "her", "here", "him", "himself", "his", "how",
+    "if", "in", "into", "is", "it", "its", "just",
+    "like", "make", "many", "me", "might", "more",
+    "most", "much", "must", "my", "never", "now",
+    "of", "on", "only", "or", "other", "our",
+    "out", "over", "said", "same", "see", "should",
+    "since", "some", "still", "such", "take", "than",
+    "that", "the", "their", "them", "then", "there",
+    "these", "they", "this", "those", "through",
+    "to", "too", "under", "up", "very", "was",
+    "way", "we", "well", "were", "what", "where",
+    "which", "while", "who", "will", "with", "would",
+    "you", "your"
+};
+
+
+int find_filter_word(char *target, const char *list[], int size) {
+    int comparison;
+    int low = 0, high = size - 1, mid;
+    while (low <= high) {
+        mid = low + (high - low) / 2;
+        comparison = strcmp(target, list[mid]);
+        if (comparison < 0)
+            high = mid - 1;
+        else if (comparison > 0)
+            low = mid + 1;
+        else
+            return mid;
+    }
+    return -1;
+}
+
+struct word_node *add_word_to_tree(struct word_node *node, char *w) {
+    int comparison;
+    if (node == NULL) {
+        node = (struct word_node *) malloc(sizeof(struct word_node));
+        node->text = strdup(w);
+        node->occurrence_count = 1;
+        // Initialize line_flags to false
+        for(int i = 0; i < 100; i++) node->line_flags[i] = false;
+        if (current_line_num < 100) {
+            node->line_flags[current_line_num] = true;
+        }
+        node->left_child = node->right_child = NULL;
+    } else if ((comparison = strcmp(w, node->text)) == 0) {
+        node->occurrence_count++;
+        if (current_line_num < 100) {
+            node->line_flags[current_line_num] = true;
+        }
+    } else if (comparison < 0) {
+        node->left_child = add_word_to_tree(node->left_child, w);
+    } else {
+        node->right_child = add_word_to_tree(node->right_child, w);
+    }
+    return node;
+}
+void display_tree_data(struct word_node *node) {
+    if (node != NULL) {
+        display_tree_data(node->left_child);
+        printf("%d %s: ", node->occurrence_count, node->text);
+        for(int i = 0; i <= current_line_num; i++) {
+            if(node->line_flags[i]) {
+                printf("%d ", i);
+            }
+        }
+        printf("\n");
+        display_tree_data(node->right_child);
+    }
+}
+
+int fetch_next_word(char *buffer, int limit) {
+    int character;
+    char *ptr = buffer;
+    while (isspace(character = getchar())) {
+        if (character == '\n') {
+            current_line_num++;
+        }
+    }
+    if (character == EOF)
+        return EOF;
+        *ptr++ = character;
+    if (!isalpha(character)) {
+        *ptr = '\0';
+        return buffer[0];
+    }
+    for ( ; --limit > 0; ptr++) {
+        *ptr = getchar();
+        if (!isalnum(*ptr)) {
+            ungetc(*ptr, stdin); // Put the non-alphanumeric char back
+            break;
+        }
+    }
+    *ptr = '\0';
+    return buffer[0];
+}

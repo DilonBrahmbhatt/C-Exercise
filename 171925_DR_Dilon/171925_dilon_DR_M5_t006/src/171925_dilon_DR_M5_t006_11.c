@@ -1,5 +1,6 @@
 /*
-discribtion: Given the basic framework, it's straightforward to extend the calculator. Add the modulus (%) operator and provisions for negative numbers.
+discribtion:Modify the program entab and detab (written as exercises in Chapter 1) to accept a list of tab stops as arguments.
+            Use the default tab settings if there are no arguments.
 Author: Dilon Brahmbhatt
 Created: 07 april, 2026
 Modified: 07 april, 2026
