@@ -25,6 +25,12 @@ void DR_M7_switch(int16_t argc, char *argv[]) {
                 case 2:
                         NongraphicHaxOctal();
                         break;
+                case 3:
+                        MinPrintfModified();
+                        break;
+                case 4:
+                        RPNUsingScanf();
+                        break;
                 default:
                         break;
 }

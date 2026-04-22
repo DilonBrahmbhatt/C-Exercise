@@ -201,6 +201,8 @@ struct nlist *undef(char *name);
 /*all module7 function defination*/
 void ArgLowerUpper(int16_t argc, char *argv[]);
 void NongraphicHaxOctal();
+void MinPrintfModified();
+void RPNUsingScanf();
 
 #endif /* HEADER_H */
 
