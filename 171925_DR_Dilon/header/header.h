@@ -63,6 +63,7 @@ void DR_M3_switch();
 void DR_M4_switch();
 void DR_M5_switch(int16_t argc, char *argv[]);
 void DR_M6_switch(int16_t argc, char *argv[]);
+void DR_M7_switch(int16_t argc, char *argv[]);
 
 /*common function*/
 void reverse_string(char str[]);
@@ -81,7 +82,7 @@ int16_t getop(char token[]);
 void clear_input_buffer();
 void process_args(int16_t argc, char *argv[]);
 
-/*all module1 function definarion*/
+/*all module1 function defination*/
 void hellow_world();
 void hello_world_with_slash_c();
 void getchar_EOF_value();
@@ -105,7 +106,7 @@ void detab_input_stream(int16_t TABSIZE);
 void entab_input_text_stream();
 void fold_line();
 
-/*all module2 function definarion*/
+/*all module2 function defination*/
 void size_of_data_type();
 void get_input_no_logic_ops();
 void htoi();
@@ -117,7 +118,7 @@ void rightrot();
 void bitcount();
 void Uper_to_Lower();
 
-/*all module3 function definarion*/
+/*all module3 function defination*/
 void binary_search_main();
 void replace_newline_tab();
 void expand_main();
@@ -125,7 +126,7 @@ void input_and_convert();
 void Digit_and_Base();
 void Min_field_width();
 
-/*all module4 function definarion*/
+/*all module4 function defination*/
 void strindex_main();
 void atof_main();
 void reverse_polish_calculator();
@@ -141,7 +142,7 @@ void itoa_using_recursion();
 void swap_duplicate_top();
 void macro_swap();
 
-/*all module5 function definarion*/
+/*all module5 function defination*/
 void validNumberRPN();
 void validFloatRPN();
 void strcatMain();
@@ -154,7 +155,7 @@ void ReverseSorting(int16_t argc, char *argv[]);
 void FoldingAlphabets(int16_t argc, char *argv[]);
 void FoldingAndDirectoryOrder(int16_t argc, char *argv[]);
 void SortCategoryPage(int argc, char *argv[]);
-/*all module6 function definarion*/
+/*all module6 function defination*/
 
 void FrequecyOfKeywords();
 int16_t BSTHandlingVariableCount(int16_t argc, char *argv[]);
@@ -181,7 +182,7 @@ struct word_node {
     int16_t occurrence_count;
     struct word_node *left_child;
     struct word_node *right_child;
-    bool line_flags[100]; // Increased size slightly for safety
+    bool line_flags[100];
 };
 extern int current_line_num;
 void display_tree_data(struct word_node *node);
@@ -197,7 +198,9 @@ struct nlist *lookup(char *s);
 struct nlist *install(char *name, char *defn);
 struct nlist *undef(char *name);
 
-
+/*all module7 function defination*/
+void ArgLowerUpper(int16_t argc, char *argv[]);
+void NongraphicHaxOctal();
 
 #endif /* HEADER_H */
 
