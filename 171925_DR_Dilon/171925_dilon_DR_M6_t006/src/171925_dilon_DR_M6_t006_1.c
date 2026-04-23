@@ -1,5 +1,5 @@
 /*
-description: Our version of getword does not properly handle underscores, string constants, comments, or preprocessor control lines. Write a better ver>
+description: Our version of getword does not properly handle underscores, string constants, comments, or preprocessor control lines.
 Author: Dilon Brahmbhatt
 Created: 16 April, 2026
 Modified: 16 April, 2026

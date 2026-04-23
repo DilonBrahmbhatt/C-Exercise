@@ -1,5 +1,5 @@
 /*
-description: Make dcl recover from input errors.
+Discribtion: Make dcl recover from input errors.
 Author: Dilon Brahmbhatt
 Created: 13 april, 2026
 Modified: 13 april, 2026
@@ -58,7 +58,6 @@ void dirdcl(void)
         printf("error: expected name or (dcl)\n");
         error = 1;
     }
- 
     while ((type = gettoken()) == PARENS || type == BRACKETS) {
         if (type == PARENS)
             strcat(out, " function returning");
@@ -112,4 +111,3 @@ int gettoken(void)
         return tokentype = c;
     }
 }
-

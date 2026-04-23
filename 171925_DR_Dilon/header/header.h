@@ -203,6 +203,9 @@ void ArgLowerUpper(int16_t argc, char *argv[]);
 void NongraphicHaxOctal();
 void MinPrintfModified();
 void RPNUsingScanf();
+void main_file_comp(int argc, char *argv[]);
+void pattern_files_main(int argc, char *argv[]);
+void main_file_page(int argc, char *argv[]);
 
 #endif /* HEADER_H */
 

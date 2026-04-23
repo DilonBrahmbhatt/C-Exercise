@@ -1,5 +1,6 @@
 /*
-description: Our version of getword does not properly handle underscores, string constants, comments, or preprocessor control lines. Write a better version.
+description: Write a program that reads a C program and prints in alphabetical order each group of variable names that are identical in the first 6 characters,
+             but different somewhere thereafter. Don't count words within strings and comments. Make 6 parameters that can be set from the command line.
 Author: Dilon Brahmbhatt
 Created: 16 April, 2026
 Modified: 17 April, 2026
@@ -24,15 +25,15 @@ Modified: 17 April, 2026
 struct tnode *talloc(void)
 {
         struct tnode *p = (struct tnode *) malloc(sizeof(struct tnode));
- 
+
     if (p == NULL) {
         printf("Memory allocation failed\n");
         exit(1);
     }
- 
+
     return p;
 }
- 
+
 /*
 description: this function takes values from input and create a tree accordingly
 Author: Dilon Brahmbhatt
@@ -66,17 +67,17 @@ void treeprint(struct tnode *p, int prefix)
 {
     static char prev[MAXWORD] = "";
     static int group_active = 0;
- 
+
     if (p != NULL) {
         treeprint(p->left, prefix);
- 
+
         if (strncmp(prev, p->word, prefix) == 0) {
- 
+
             if (!group_active) {
-                printf("%s\n", prev);  // print first element
+                printf("%s\n", prev);
                 group_active = 1;
             }
- 
+
             printf("%s\n", p->word);
         }
         else {
@@ -113,7 +114,7 @@ void printGroups(struct tnode *root, int prefix, int flush)
     static char prev[MAXWORD] = "";
     static struct tnode *group[100];
     static int count = 0;
- 
+
     if (flush) {
         if (count > 1) {
             printf("\n%s\n", prev);
@@ -124,15 +125,15 @@ void printGroups(struct tnode *root, int prefix, int flush)
         prev[0] = '\0';
         return;
     }
- 
+
     if (root == NULL) return;
- 
+
     printGroups(root->left, prefix, 0);
- 
+
     char current[MAXWORD];
     strncpy(current, root->word, prefix);
     current[prefix] = '\0';
- 
+
     if (count > 0 && strcmp(prev, current) != 0) {
         if (count > 1) {
             printf("\n%s\n", prev);
@@ -157,7 +158,7 @@ int16_t BSTHandlingVariableCount(int16_t argc, char *argv[])
 {
     FILE *fp;
     int prefix = 6;
- 
+
     if (argc < 2) {
         printf("Usage: %s file.c [prefix]\n", argv[0]);
         return 1;

@@ -31,6 +31,18 @@ void DR_M7_switch(int16_t argc, char *argv[]) {
                 case 4:
                         RPNUsingScanf();
                         break;
+                case 5:
+                        main_file_comp(argc,argv);
+                        break;
+                case 6:
+                        main_file_comp(argc,argv);
+                        break;
+                case 7:
+                        pattern_files_main(argc,argv);
+                        break;
+                case 8:
+                        main_file_page(argc,argv);
+                        break;
                 default:
                         break;
 }

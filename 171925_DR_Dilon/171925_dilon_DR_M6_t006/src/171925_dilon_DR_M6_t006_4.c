@@ -50,8 +50,7 @@ void display_sorted(void) {
         printf("%hd : %s\n", word_list[index]->occurrence_count, word_list[index]->text);
     }
 }
- 
- 
+
 void SortDecendingOccurence() {
     struct word_node *tree_root = NULL;
     char word_buffer[MAX_STR_LEN];

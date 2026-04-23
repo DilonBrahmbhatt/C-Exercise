@@ -1,9 +1,10 @@
-/*  description: undcl program is used to convert a word description of a
-        declaration into a C declaration. ensure that the program does not
-        add unnecessary parentheses around parts of the declaration.
-    Author: Dilon Brahmbhatt
-    Created: 13 april, 2026
-    Modified: 13 april, 2026
+/*
+description: undcl program is used to convert a word description of a
+             declaration into a C declaration. ensure that the program does not
+             add unnecessary parentheses around parts of the declaration.
+Author: Dilon Brahmbhatt
+Created: 13 april, 2026
+Modified: 13 april, 2026
 */
 #include <stdio.h>
 #include <string.h>
@@ -43,3 +44,4 @@ void UndclUpdated()
         printf("%s\n", out);
     }
 }
+

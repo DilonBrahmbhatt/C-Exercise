@@ -43,6 +43,12 @@ void switch_choose_program(int16_t argc, char *argv[]) {
         case 5:
                 DR_M5_switch(argc,argv);
                 break;
+        case 6:
+                DR_M6_switch(argc,argv);
+                break;
+        case 7:
+                DR_M7_switch(argc,argv);
+                break;
 	  default:
                printf("enter valid input");
 	       break;
